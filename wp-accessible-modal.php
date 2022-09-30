@@ -2,12 +2,11 @@
 /*
  * Plugin Name: WP Accessible Modal
  * Plugin URI: http://www.joedolson.com/
- * Plugin Description: Implements a simple accessible modal.
+ * Plugin Description: Implements a simple accessible modal. Uses van11y accessible modal: https://github.com/nico3333fr/van11y-accessible-modal-window-aria
  * Version: 1.0.0
  * Author: Joe Dolson
  * Author URI: http://www.joedolson.com
  */
-
 
 add_action( 'wp_enqueue_scripts', 'wpam_enqueue_styles', 10, 1 );
 /**
@@ -16,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'wpam_enqueue_styles', 10, 1 );
 function wpam_enqueue_styles() {
 	$css_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/css/wpam-styles.css' ) );
 
-	if ( SCRIPT_DEBUG ) {
+	if ( SCRIPT_DEBUG && true === SCRIPT_DEBUG ) {
 		$script = 'van11y-accessible-modal-window-aria.js';
 	} else {
 		$script = 'van11y-accessible-modal-window-aria.min.js';

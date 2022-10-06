@@ -46,12 +46,13 @@ function wpam_insert_modal( $atts, $content = '' ) {
 			'prefix'   => 'simple',
 			'title'    => 'Modal Content',
 			'close'    => __( 'Close', 'wpam' ),
+			'control'  => '',
 		),
 		$atts,
 		'wpam_insert_modal'
 	);
 	$generated_id = md5( $content );
-	$button       = '<button class="js-modal button" data-modal-prefix-class="' . $args['prefix'] . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . $args['title'] . '" data-modal-close-text="' . $args['close'] . '">' . $args['text'] . '</button>';
+	$button       = '<button class="js-modal button" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
 	$content = ( '' === $content ) ? __( 'Add content between [modal] and [/modal] to display.', 'wpam' ) : $content;
 
 	return $button . '<div id="' . $generated_id . '" class="modal-content">' . $content . '</div>';

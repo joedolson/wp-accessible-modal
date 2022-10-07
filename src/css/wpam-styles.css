@@ -3,11 +3,16 @@ dialog {
 	border: 0;
 }
 
+button.js-modal-hidden {
+	display: none;
+}
+
 #modal-title {
 	font-size: 1.25em;
 	position: absolute;
 	top: 0;
 	left: 0;
+	margin-top: 0;
 	padding: 15px;
 	background: #f3f3f3;
 	width: 100%;

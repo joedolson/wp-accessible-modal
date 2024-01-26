@@ -14,7 +14,7 @@
   "homepage": "https://github.com/joedolson/wp-accessible-modal",
   "repository": "git+https://github.com/joedolson/wp-accessible-modal.git",
   "bugs": {
-    "url": "https://github.com/ableplayer/ableplayer-wordpress/issues"
+    "url": "https://github.com/joedolson/wp-accessible-modal/issues"
   },
   "engines": {
     "node": ">=10.0.0",

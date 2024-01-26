@@ -3,7 +3,7 @@
     "description": "WP Accessible Modal Plugin for WordPress",
     "keywords": ["wordpress", "dialog", "modal"],
     "homepage": "https://github.com/joedolson/wp-accessible-modal/",
-    "license": "GPL 2.0+",
+    "license": "GPL-3.0-or-later",
     "authors": [{
         "name": "Joe Dolson",
         "email": "test@test.com",

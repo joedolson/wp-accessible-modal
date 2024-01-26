@@ -8,6 +8,7 @@ Requires PHP: 7.0
 License: GPLv3 or later
 Text domain: wpam
 Stable tag: 1.0.0
+Update URI: https://www.joedolson.com
 
 Add a simple acccessible modal dialog shortcode in WordPress.
 

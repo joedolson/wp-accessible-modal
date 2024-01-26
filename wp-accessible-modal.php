@@ -38,6 +38,18 @@
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+require 'src/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$wpam_update_checker = PucFactory::buildUpdateChecker(
+	'https://github.com/joedolson/wp-accessible-modal/',
+	__FILE__,
+	'wp-accessible-modal'
+);
+
+// Set the branch that contains the stable release.
+$wpam_update_checker->setBranch( 'main' );
+
 /**
  * The primary function this plug-in serves is to enqueue CSS and JS.
  */

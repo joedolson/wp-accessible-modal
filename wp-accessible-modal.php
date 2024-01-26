@@ -120,7 +120,6 @@ function wpam_insert_modal( $atts, $content = '' ) {
 	}
 	$button = '<button class="' . $button_class . '" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
 
-
 	return $button . $modal_content;
 }
 add_shortcode( 'modal', 'wpam_insert_modal' );

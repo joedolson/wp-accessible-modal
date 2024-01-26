@@ -3,7 +3,7 @@
 Adds a simple accessible dialog shortcode.
 
 
-[![Code Linting](https://github.com/joedolson/wp-accessible-modal/actions/workflows/main.yml/badge.svg)](https://github.com/joedolson/wp-accessible-modal/actions/workflows/main.yml) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](https://www.gnu.org/license/gpl-2.0.html)
+[![Code Linting](https://github.com/joedolson/wp-accessible-modal/actions/workflows/main.yml/badge.svg)](https://github.com/joedolson/wp-accessible-modal/actions/workflows/main.yml) [![License](https://img.shields.io/badge/license-GPL--3.0%2B-green.svg)](https://www.gnu.org/licenses/gpl-3.0.txt)
 
 ## WP Accessible Modal for WordPress Build Environment
 

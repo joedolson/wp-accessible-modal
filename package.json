@@ -1,18 +1,18 @@
 {
-  "name": "ableplayer-wordpress",
-  "version": "1.2.0",
+  "name": "wp-accessible-modal",
+  "version": "1.0.0",
   "private": true,
-  "description": "AblePlayer plugin for WordPress",
+  "description": "WP Accessible Modal",
   "author": "Joe Dolson",
-  "license": "MIT",
+  "license": "GPLv3",
   "keywords": [
-    "media",
-    "audio",
-	"video",
-	"html5"
+    "modal",
+    "dialog",
+	"wordpress",
+	"accessibility"
   ],
-  "homepage": "https://github.com/ableplayer/ableplayer-wordpress",
-  "repository": "git+https://github.com/ableplayer/ableplayer-wordpress.git",
+  "homepage": "https://github.com/joedolson/wp-accessible-modal",
+  "repository": "git+https://github.com/joedolson/wp-accessible-modal.git",
   "bugs": {
     "url": "https://github.com/ableplayer/ableplayer-wordpress/issues"
   },
@@ -31,7 +31,7 @@
     "prelint-php": "wp-env run composer 'install --no-interaction'",
     "lint-php": "wp-env run composer run-script lint",
     "pretest-php": "wp-env run composer 'install --no-interaction'",
-    "test-php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/ableplayer-wordpress/phpunit.xml.dist --verbose'",
+    "test-php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/wp-accessible-modal/phpunit.xml.dist --verbose'",
     "wp-env": "wp-env"
   }
 }

@@ -7,7 +7,7 @@ This plugin is available with no support.
 Basic usage is via the `modal` shortcode, with the following attributes & default values:
 
 * `'text'    => __( 'Open Modal', 'wpam' ),`: the text used on the button to trigger the modal.
-* `'prefix'  => 'simple',``: The CSS class used to prefix modal elements.
+* `'prefix'  => 'simple',`: The CSS class used to prefix modal elements.
 * `'title'   => __( 'Modal Content', 'wpam' ),`: the text for the modal dialog name.
 * `'close'   => __( 'Close', 'wpam' ),`: the text for the modal close button.
 * `'control' => '',`: an ID for an alternate control to use to trigger the modal content. Hides the standard button and attaches events to a control of your choice.

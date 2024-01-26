@@ -45,13 +45,13 @@ function wpam_enqueue_styles() {
 	$css_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/css/wpam-styles.css' ) );
 
 	if ( SCRIPT_DEBUG && true === SCRIPT_DEBUG ) {
-		$script  = 'van11y-accessible-modal-window-aria.js';
+		$script = 'van11y-accessible-modal-window-aria.js';
 	} else {
 		$script = 'van11y-accessible-modal-window-aria.min.js';
 	}
 	$js_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/js/' . $script ) );
 	$hs_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/js/handler.js' ) );
-	
+
 	wp_enqueue_script( 'wpam.handler', plugins_url( 'src/js/handler.js', __FILE__ ), array(), $js_ver, true );
 	wp_enqueue_script( 'wpam.script', plugins_url( 'src/js/' . $script, __FILE__ ), array(), $js_ver, true );
 	wp_localize_script(
@@ -68,7 +68,7 @@ add_action( 'wp_enqueue_scripts', 'wpam_enqueue_styles', 10, 1 );
 /**
  * Insert a modal dialog.
  *
- * @param array $atts Shortcode attributes.
+ * @param array  $atts Shortcode attributes.
  * @param string $content Contained content.
  */
 function wpam_insert_modal( $atts, $content = '' ) {
@@ -90,7 +90,7 @@ function wpam_insert_modal( $atts, $content = '' ) {
 	} else {
 		$button_class = 'js-modal-hidden';
 	}
-	$button       = '<button class="' . $button_class . '" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
+	$button  = '<button class="' . $button_class . '" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
 	$content = ( '' === $content ) ? __( 'Add content between [modal] and [/modal] to display.', 'wpam' ) : $content;
 
 	return $button . '<div id="' . $generated_id . '" class="modal-content">' . $content . '</div>';

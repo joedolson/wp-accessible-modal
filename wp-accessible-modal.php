@@ -70,13 +70,15 @@ add_action( 'wp_enqueue_scripts', 'wpam_enqueue_styles', 10, 1 );
  *
  * @param array  $atts Shortcode attributes.
  * @param string $content Contained content.
+ *
+ * @return string
  */
 function wpam_insert_modal( $atts, $content = '' ) {
 	$args = shortcode_atts(
 		array(
-			'text'    => 'Open Modal',
+			'text'    => __( 'Open Modal', 'wpam' ),
 			'prefix'  => 'simple',
-			'title'   => 'Modal Content',
+			'title'   => __( 'Modal Content', 'wpam' ),
 			'close'   => __( 'Close', 'wpam' ),
 			'control' => '',
 		),

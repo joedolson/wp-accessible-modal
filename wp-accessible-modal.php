@@ -17,7 +17,7 @@
  * License:     GPL-3.0+
  * License URI: http://www.gnu.org/license/gpl-3.0.txt
  * Domain Path: lang
- * Version:     1.0.0
+ * Version:     1.1.0
  */
 
 /*
@@ -64,10 +64,10 @@ function wpam_enqueue_styles() {
 	$js_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/js/' . $script ) );
 	$hs_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'src/js/handler.js' ) );
 
-	wp_enqueue_script( 'wpam.handler', plugins_url( 'src/js/handler.js', __FILE__ ), array(), $js_ver, true );
-	wp_enqueue_script( 'wpam.script', plugins_url( 'src/js/' . $script, __FILE__ ), array(), $js_ver, true );
+	wp_enqueue_script( 'wpam.handler', plugins_url( 'src/js/handler.js', __FILE__ ), array(), $hs_ver, true );
+	wp_enqueue_script( 'van11y-modal', plugins_url( 'src/js/' . $script, __FILE__ ), array(), $js_ver, true );
 	wp_localize_script(
-		'wpam.script',
+		'van11y-modal',
 		'wpam',
 		array(
 			'context' => (string) is_user_logged_in(),
@@ -93,20 +93,34 @@ function wpam_insert_modal( $atts, $content = '' ) {
 			'title'   => __( 'Modal Content', 'wpam' ),
 			'close'   => __( 'Close', 'wpam' ),
 			'control' => '',
+			'content' => '',
 		),
 		$atts,
 		'wpam_insert_modal'
 	);
 
-	$generated_id = md5( $content );
-	if ( '' === $args['control'] ) {
-		$button_class = 'js-modal button';
+	if ( '' === $args['content'] ) {
+		$content      = ( '' === $content ) ? __( 'Add content between [modal] and [/modal] to display.', 'wpam' ) : $content;
+		$generated_id = md5( $content );
+		$button_class = '';
 	} else {
-		$button_class = 'js-modal-hidden';
+		$content      = '';
+		$generated_id = $args['content'];
+		$button_class = 'wpam-external ';
 	}
-	$button  = '<button class="' . $button_class . '" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
-	$content = ( '' === $content ) ? __( 'Add content between [modal] and [/modal] to display.', 'wpam' ) : $content;
+	$modal_content = '';
+	if ( $content ) {
+		$modal_content = '<div id="' . $generated_id . '" class="modal-content">' . $content . '</div>';
+	}
 
-	return $button . '<div id="' . $generated_id . '" class="modal-content">' . $content . '</div>';
+	if ( '' === $args['control'] ) {
+		$button_class .= 'js-modal button';
+	} else {
+		$button_class .= 'js-modal-hidden';
+	}
+	$button = '<button class="' . $button_class . '" data-control="' . esc_attr( $args['control'] ) . '" data-modal-prefix-class="' . esc_attr( $args['prefix'] ) . '" data-modal-content-id="' . $generated_id . '" data-modal-title="' . esc_attr( $args['title'] ) . '" data-modal-close-text="' . esc_attr( $args['close'] ) . '">' . esc_html( $args['text'] ) . '</button>';
+
+
+	return $button . $modal_content;
 }
 add_shortcode( 'modal', 'wpam_insert_modal' );

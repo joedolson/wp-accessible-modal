@@ -10,7 +10,8 @@ Basic usage is via the `modal` shortcode, with the following attributes & defaul
 * `'prefix'  => 'simple',`: The CSS class used to prefix modal elements.
 * `'title'   => __( 'Modal Content', 'wpam' ),`: the text for the modal dialog name.
 * `'close'   => __( 'Close', 'wpam' ),`: the text for the modal close button.
-* `'control' => '',`: an ID for an alternate control to use to trigger the modal content. Hides the standard button and attaches events to a control of your choice.
+* `'control' => '',`: a selector, e.g. '#my-button' or '.reports > .info-button' for an alternate control to trigger the modal content. Hides the standard button and attaches events to a control of your choice.
+* `'content' => '',`: An ID attribute, e.g. 'modal-content', that contains the information to include. Overrides shortcode contents.
 
 The content of the modal should be between the opening and closing shortcode tags: `[modal]Content of modal[/modal]`
 
@@ -21,7 +22,7 @@ The content of the modal should be between the opening and closing shortcode tag
 * Tags: modal,dialog,wordpress
 * Requires at least: 6.0
 * Tested up to: 6.4
-* Stable tag: `1.0.0`
+* Stable tag: `1.1.0`
 
 This is the development environment for WP Accessible Modal for WordPress
 

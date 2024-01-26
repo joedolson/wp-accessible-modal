@@ -7,7 +7,7 @@ Tested up to: 6.4
 Requires PHP: 7.0
 License: GPLv3 or later
 Text domain: wpam
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Update URI: https://www.joedolson.com
 
 Add a simple acccessible modal dialog shortcode in WordPress.
@@ -28,6 +28,13 @@ All available documentation is in the <a href="https://github.com/joedolson/wp-a
 * Activate.
 
 == Changelog ==
+
+= 1.1.0 =
+
+* Bug fix: Rename van11y to match usage in My Calendar.
+* Feature: Add option to target an existing container for modal contents.
+* Remove unneeded console logging.
+* Update docs.
 
 = 1.0.0 =
 

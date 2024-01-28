@@ -34,6 +34,10 @@ Bugs or feature development contributions should be made through the [GitHub rep
 
 * [Joe Dolson](https://www.joedolson.com)
 
+## 3rd Party Sources
+
+* [Nicolas Hoffmann - Van11y Accessible Modal](https://github.com/nico3333fr/van11y-accessible-modal-window-aria)
+
 ## Contributors
 
 [Github Contributors](https://github.com/joedolson/wp-accessible-modal/graphs/contributors)
